@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 
 public class DBConnection {
-    private final String jdbcURL = "jdbc:postgresql://localhost:5432/postgres";
+    private final String jdbcURL = "jdbc:postgresql://localhost:5432/turntabl";
     private final String jdbcUsername = "postgres";
     private final String jdbcPassword = "password";
 

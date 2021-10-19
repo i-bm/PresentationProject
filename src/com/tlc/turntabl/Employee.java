@@ -1,15 +1,36 @@
 package com.tlc.turntabl;
 
-public class User extends TemplateMethod {
+public class Employee extends TemplateMethod{
+
+
+    private String empId;
     private String firstName;
     private String lastName;
     private String email;
 
-
-    public User(String firstName, String lastName, String email) {
+    public Employee(String empId, String firstName, String lastName, String email) {
+        this.empId = empId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+    }
+
+    @Override
+    public void beforeSave() {
+        System.out.println("Before save do something...!");
+    }
+
+    @Override
+    public void afterSave() {
+        System.out.println("Data has been save successfully!");
+    }
+
+    public String getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(String empId) {
+        this.empId = empId;
     }
 
     public String getFirstName() {
@@ -38,20 +59,11 @@ public class User extends TemplateMethod {
 
     @Override
     public String toString() {
-        return "User{" +
-                "firstName='" + firstName + '\'' +
+        return "Employee{" +
+                "empId='" + empId + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
-    }
-
-    @Override
-    public void beforeSave() {
-        System.out.println("Before save do something...!");
-    }
-
-    @Override
-    public void afterSave() {
-        System.out.println("Data has been save successfully!");
     }
 }
