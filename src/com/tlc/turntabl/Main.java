@@ -12,14 +12,15 @@ public class Main {
        String empId =  "ERNO 201909" + String.valueOf(rand.nextInt(100));
 
 
-        Employee employee1 = new Employee(empId, "Isaac","Boakye-Manu", "isaac.boakye-manu@turntabl.io");
-        employee1.save(employee1);
+//        Employee employee1 = new Employee(empId, "Isaac","Boakye-Manu", "isaac.boakye-manu@turntabl.io");
+//        employee1.save(employee1);
+
+        Employee employee2 = new Employee(empId, "Dawud","Mohammed", "dawud.mohammed@turntabl.io");
+        employee2.save(employee2);
+//
+//        Employee employee3 = new Employee(empId, "Ofoe","Fiergbor", "ofoe.fiergbor@turntabl.io");
+//        employee3.save(employee3);
 
 
-//        User user2 = new User("Dawud", "Mohammed", "dawud.mohammed@turntabl.io");
-//        user2.save(user2);
-
-//        User user3 = new User("Ofoe", " Fiergbor", "ofoe.fiergbor@turntabl.io");
-//        user3.save(user3);
     }
 }
