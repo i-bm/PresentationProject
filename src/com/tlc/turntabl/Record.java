@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public abstract class Record extends DB {
+public abstract class Record extends DBConnection {
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (firstname, lastname, email) VALUES " +
             " (?, ?, ?);";
@@ -15,8 +15,8 @@ public abstract class Record extends DB {
     public void save( User user) throws InterruptedException, SQLException {
 
         // this.validate();
-        this.beforeSave();
-        this.connectDB();
+//        this.beforeSave();
+//        this.connectDB();
 
 //        this.createQuery(user);// INSERT INTO `Users`(firstname, lastname) values('Isaac','Boakye');
         this.executeInsertQuery(user);
@@ -24,8 +24,8 @@ public abstract class Record extends DB {
     }
 
     public final void connectDB(){
-//        System.out.println("Connecting to Database....!");
-//        System.out.println("Connection Successful!");
+        System.out.println("Connecting to Database....!");
+        System.out.println("Connection Successful!");
 
     }
 

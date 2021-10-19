@@ -1,14 +1,11 @@
 package com.tlc.turntabl;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-public class DB {
-    private final String jdbcURL = "jdbc:postgresql://localhost:5432/test";
+
+public class DBConnection {
+    private final String jdbcURL = "jdbc:postgresql://localhost:5432/postgres";
     private final String jdbcUsername = "postgres";
     private final String jdbcPassword = "password";
 
@@ -25,7 +22,6 @@ public class DB {
         Connection connection = null;
         try {
             System.out.println("Connecting to Database....!");
-//            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
         } catch ( Exception e) {
             // TODO Auto-generated catch block
