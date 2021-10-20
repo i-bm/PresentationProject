@@ -1,5 +1,7 @@
 package com.tlc.turntabl;
 
+import static java.lang.Thread.sleep;
+
 public class Employee extends TemplateMethod{
 
     private String empId;
@@ -15,13 +17,27 @@ public class Employee extends TemplateMethod{
     }
 
     @Override
-    public void operation1() {
-        System.out.println("Executing operation1...!");
+    public void operation1() throws InterruptedException {
+        System.out.print("Operation1 in execution");
+        for(int i=0; i <= 2; i ++){
+            sleep(1000);
+            System.out.print(".");
+        };
+        System.out.print("\n");
+        System.out.println("Done: Operation1 ");
+        System.out.print("\n");
     }
 
     @Override
-    public void operation2() {
-        System.out.println("Executing operation2...!");
+    public void operation2() throws InterruptedException {
+        System.out.print("Operation2 in execution");
+        for(int i=0; i <= 2; i ++){
+            sleep(1000);
+            System.out.print(".");
+        };
+        System.out.print("\n");
+        System.out.println("Done: Operation2 ");
+        System.out.print("\n");
     }
 
     public String getEmpId() {

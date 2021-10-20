@@ -23,7 +23,7 @@ public class DBConnection {
     protected Connection getConnection() {
         Connection connection = null;
         try {
-            System.out.println();
+//            System.out.println();
             //delay execution by 2milliseconds
             System.out.print("Connecting to Database");
             for(int i=0; i <= 3; i ++){
