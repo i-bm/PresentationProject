@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
-public abstract class TemplateMethod extends DBConnection {
+public abstract class TemplateClass extends DBConnection {
 
     private static final String INSERT_EMPLOYEE_SQL = "INSERT INTO employees" + "  (emp_id, firstname, lastname, email) VALUES " +
             " (?, ?, ?, ?);";
@@ -22,19 +22,23 @@ public abstract class TemplateMethod extends DBConnection {
         this.operation2();
     }
 
-    public void get( Integer id) throws InterruptedException, SQLException {
+
+    public final void get( Integer id) throws InterruptedException, SQLException {
 
         this.operation1();
         this.executeSelectQuery(id);
         this.operation2();
     }
 
+    // abstract method1
     public abstract void operation1() throws InterruptedException;
+
+    // abstract method2
     public abstract void operation2() throws InterruptedException;
 
 
-
-    public void executeInsertQuery(Employee employee) throws SQLException, InterruptedException {
+    //template method 1
+    public final void executeInsertQuery(Employee employee) throws SQLException, InterruptedException {
 
         // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection();
@@ -62,7 +66,8 @@ public abstract class TemplateMethod extends DBConnection {
         }
     }
 
-    public void executeSelectQuery(Integer id) throws SQLException, InterruptedException {
+    //template method 2
+    public final void executeSelectQuery(Integer id) throws SQLException, InterruptedException {
 
         // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection();

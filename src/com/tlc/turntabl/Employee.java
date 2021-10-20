@@ -2,7 +2,7 @@ package com.tlc.turntabl;
 
 import static java.lang.Thread.sleep;
 
-public class Employee extends TemplateMethod{
+public class Employee extends TemplateClass {
 
     private String empId;
     private String firstName;
