@@ -14,19 +14,11 @@ public abstract class TemplateMethod extends DBConnection {
 
     public void save( Employee employee) throws InterruptedException, SQLException {
 
-        // this.validate();
-//        this.beforeSave();
-//        this.connectDB();
-
+        this.operation1();
 //        this.createQuery(user);// INSERT INTO `Users`(firstname, lastname) values('Isaac','Boakye');
         this.executeInsertQuery(employee);
-        this.afterSave();
-    }
 
-    public final void connectDB(){
-        System.out.println("Connecting to Database....!");
-        System.out.println("Connection Successful!");
-
+        this.operation2();
     }
 
 
@@ -43,25 +35,38 @@ public abstract class TemplateMethod extends DBConnection {
     }
 
 
-    public void executeInsertQuery(Employee employee) throws SQLException{
-        System.out.println(INSERT_USERS_SQL);
+    public void executeInsertQuery(Employee employee) throws SQLException, InterruptedException {
+//        System.out.println(INSERT_USERS_SQL);
+
         // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+            //delay execution by 2 milliseconds
+            System.out.print("Executing Query");
+            for(int i=0; i <= 2; i ++){
+                sleep(1000);
+                System.out.print(".");
+            };
+            System.out.println();
             preparedStatement.setString(1, employee.getEmpId());
             preparedStatement.setString(2, employee.getFirstName());
             preparedStatement.setString(3, employee.getLastName());
             preparedStatement.setString(4, employee.getEmail());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
+
+//            System.out.println();
+            System.out.println("Updated Rows: 1");
+            System.out.println("Finish Time: " + now());
+            System.out.println();
+
         } catch (SQLException e) {
             printSQLException(e);
         }
     }
 
 
-    // public abstract void connectDB();
-//public abstract void validate();
-    public abstract void beforeSave();
-    public abstract void afterSave();
+
+    public abstract void operation1();
+    public abstract void operation2();
 }

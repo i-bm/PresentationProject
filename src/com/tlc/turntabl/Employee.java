@@ -2,7 +2,6 @@ package com.tlc.turntabl;
 
 public class Employee extends TemplateMethod{
 
-
     private String empId;
     private String firstName;
     private String lastName;
@@ -16,13 +15,13 @@ public class Employee extends TemplateMethod{
     }
 
     @Override
-    public void beforeSave() {
-        System.out.println("Before save do something...!");
+    public void operation1() {
+        System.out.println("Executing operation1...!");
     }
 
     @Override
-    public void afterSave() {
-        System.out.println("Data has been save successfully!");
+    public void operation2() {
+        System.out.println("Executing operation2...!");
     }
 
     public String getEmpId() {
@@ -66,4 +65,6 @@ public class Employee extends TemplateMethod{
                 ", email='" + email + '\'' +
                 '}';
     }
+
+
 }

@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import static java.lang.Thread.sleep;
+
 
 public class DBConnection {
     private final String jdbcURL = "jdbc:postgresql://localhost:5432/turntabl";
@@ -21,7 +23,15 @@ public class DBConnection {
     protected Connection getConnection() {
         Connection connection = null;
         try {
-            System.out.println("Connecting to Database....!");
+            System.out.println();
+            //delay execution by 2milliseconds
+            System.out.print("Connecting to Database");
+            for(int i=0; i <= 3; i ++){
+                sleep(1000);
+                System.out.print(".");
+            };
+            System.out.println();
+            System.out.println("Database Connected Successfully!");
             connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
         } catch ( Exception e) {
             // TODO Auto-generated catch block
