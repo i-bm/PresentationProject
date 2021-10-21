@@ -14,15 +14,15 @@ public class Main {
 
 //        Employee employee1 = new Employee(empId, "Isaac","Boakye-Manu", "isaac.boakye-manu@turntabl.io");
 //        employee1.save(employee1);
-//        employee1.get(1);
+//        employee1.get();
 
 //        Employee employee2 = new Employee(empId, "Dawud","Mohammed", "dawud.mohammed@turntabl.io");
 //        employee2.save(employee2);
-//        employee2.get(2);
+//        employee2.get();
 //
 //        Employee employee3 = new Employee(empId, "Ofoe","Fiergbor", "ofoe.fiergbor@turntabl.io");
 ////      employee3.save(employee3);
-//        employee3.get(3);
+//        employee3.get();
 
 
     }

@@ -18,7 +18,7 @@ public abstract class TemplateClass extends DBConnection {
     public void save( Employee employee) throws InterruptedException, SQLException {
 
         this.operation1();
-        this.executeInsertQuery(employee);
+        this.executeInsertQuery(employee); //template method call
         this.operation2();
     }
 
@@ -26,7 +26,7 @@ public abstract class TemplateClass extends DBConnection {
     public final void get( Integer id) throws InterruptedException, SQLException {
 
         this.operation1();
-        this.executeSelectQuery(id);
+        this.executeSelectQuery(id); //template method call
         this.operation2();
     }
 
